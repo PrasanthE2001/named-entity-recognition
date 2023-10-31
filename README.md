@@ -1,34 +1,40 @@
-Named Entiry Recognition
-AIM
+# Named Entiry Recognition
+
+## AIM
+
 To develop an LSTM-based model for recognizing the named entities in the text.
 
-Problem Statement and Dataset
-Neural Network Model
+## Problem Statement and Dataset
+
+## Neural Network Model
+
 Include the neural network model diagram.
 
-DESIGN STEPS
-STEP 1:
+## DESIGN STEPS
+
+### STEP 1:
 Import the necessary packages.
 
-STEP 2:
+### STEP 2:
 Read the dataset, and fill the null values using forward fill.
 
-STEP 3:
+### STEP 3:
 Create a list of words, and tags. Also find the number of unique words and tags in the dataset.
 
-STEP 4:
+### STEP 4:
 Create a dictionary for the words and their Index values. Do the same for the tags as well,Now we move to moulding the data for training and testing.
 
-STEP 5:
+### STEP 5:
 We do this by padding the sequences,This is done to acheive the same length of input data.
 
-STEP 6:
+### STEP 6:
 We build a build a model using Input, Embedding, Bidirectional LSTM, Spatial Dropout, Time Distributed Dense Layers.
 
-STEP 7:
+### STEP 7:
 We compile the model and fit the train sets and validation sets,We plot the necessary graphs for analysis,A custom prediction is done to test the model manually.
 
-PROGRAM
+## PROGRAM
+~~~
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -125,14 +131,20 @@ print("{:15}{:5}\t {}\n".format("Word", "True", "Pred"))
 print("-" *30)
 for w, true, pred in zip(X_test[i], y_true, p[0]):
     print("{:15}{}\t{}".format(words[w-1], tags[true], tags[pred]))
-OUTPUT
-Training Loss, Validation Loss Vs Iteration Plot
-d6
+~~~
 
-d7
+## OUTPUT
 
-Sample Text Prediction
-d8
+### Training Loss, Validation Loss Vs Iteration Plot
 
-RESULT
+![d6](https://user-images.githubusercontent.com/93427472/201091758-3c054c4e-4218-4844-b876-262f002c4a90.png)
+
+![d7](https://user-images.githubusercontent.com/93427472/201091844-bc555dbd-b2ec-46c8-8702-019a25991530.png)
+
+
+### Sample Text Prediction
+
+![d8](https://user-images.githubusercontent.com/93427472/201091915-91eeeb42-c271-43e3-8ed5-603ae7390d0c.png)
+
+## RESULT
 Thus an LSTM-based model for recognizing the named entities in the text was successfully developed.
